@@ -5,21 +5,18 @@ $response = array();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //post data 
-    $nama = $_POST["nama"];
-    $ktp = $_POST["ktp"];
-    $alamat = $_POST["alamat"];
-    $telepon = $_POST["telepon"];
+    $id = $_POST["id"];
 
-    $perintah = "INSERT INTO iptv (nama, ktp, alamat, telepon) VALUES('$nama','$ktp','$alamat','$telepon')";
+    $perintah = "DELETE FROM iptv WHERE id = '$id'";
     $eksekusi = mysqli_query($konek, $perintah);
     $cek = mysqli_affected_rows($konek);
 
     if($cek > 0){
         $response["kode"] = 1;
-        $response["pesan"] = "Post Data Berhasil";
+        $response["pesan"] = "Data Berhasil Delete";
     }else{
         $response["kode"] = 0;
-        $response["pesan"] = "Post Data Gagal";
+        $response["pesan"] = "Data Gagal Delete";
     }
 }else{
     $response["kode"] = 0;
