@@ -21,7 +21,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
     }else{
         $response["kode"] = 0;
-        $response["pesan"] = "Data Gagal Update";
+        $response["pesan"] = "Data Gagal Update";-+
+        
     }
 }else{
     $response["kode"] = 0;
